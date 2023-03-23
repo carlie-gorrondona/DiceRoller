@@ -4,6 +4,9 @@ import random
 
 #---------------------------------- FUNCTIONS ----------------------------------#
 
+#This function randomly assigns a nummerical value to each die. Once the value of each die is determined, an image prints to the terminal to depict an image of the dice. 
+#The calculateRoll() function is called to determine the total value with dieOne and dieTwo passed by reference. The rollAgainMenu function is called to print another 
+#menu to give the user an option to roll again or quit.
 def rollDice():  
     dieOne = random.randint(1, 6)
     dieTwo = random.randint(1, 6)
@@ -48,7 +51,6 @@ def rollDice():
         case _:
             print("Invalid dice roll")
 
-
     match dieTwo:
         case 1:
             print("_________")
@@ -92,6 +94,8 @@ def rollDice():
     calculateRoll(dieOne, dieTwo)
     rollAgainMenu()
 
+#This function calculates the total value of the dice by passing their values by reference. Once total value is calculated, a match case statment prints a message
+#for the calculated value. 
 def calculateRoll(dieOneValue, dieTwoValue):
     totalValue = dieOneValue + dieTwoValue
 
@@ -121,6 +125,7 @@ def calculateRoll(dieOneValue, dieTwoValue):
         case _:
             print("What?! How did you even roll this?\n")
 
+#This function prints a menu after each dice roll, so the user can determine whether or not they want to continue rolling or quit.
 def rollAgainMenu():
     print("@------------- MENU --------------@")
     print("|        1. Roll Again! :D        |")
